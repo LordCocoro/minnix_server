@@ -1,0 +1,28 @@
+[
+    {
+      "method": "GET",
+      "model": "products",
+      "expect": 200
+    },
+    {
+        "method": "GET",
+        "model": "unity",
+        "expect": 200
+      },
+      {
+        "method": "GET",
+        "model": "types",
+        "expect": 200
+      },
+      {
+        "method": "GET",
+        "model": "categories",
+        "expect": 200
+      },
+      {
+        "method": "GET",
+        "model": "imposts",
+        "expect": 200
+      }
+
+  ]

@@ -1,0 +1,7 @@
+[
+    {
+        "method": "GET",
+        "model": "types",
+        "expect": 200
+    }
+]

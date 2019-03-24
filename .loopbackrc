@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "mongodb": {
+            "host": "127.0.0.1",
+            "database": "mongo_minix_v0",
+            "username": "",
+            "password": "",
+            "port": 27017
+        }
+    },
+    "test": {
+        "mongodb": {
+            "host": "127.0.0.1",
+            "database": "test_minnix_v0",
+            "username": "",
+            "password": "",
+            "port": 27017
+        }
+    }
+}

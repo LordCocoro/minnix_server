@@ -1,0 +1,37 @@
+{
+  "name": "type",
+  "base": "PersistedModel",
+  "strict": "validate",
+  "trackChanges": true,
+  "persistUndefinedAsNull": true,
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "defaultFn": "guid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "default": "Descripcion"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "mixins": {
+    "TimeStamp" : true
+  },
+  "validations": [],
+  "relations": {
+    "products": {
+      "type": "hasMany",
+      "model": "product",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

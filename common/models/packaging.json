@@ -1,0 +1,27 @@
+{
+  "name": "packaging",
+  "base": "PersistedModel",
+  "strict": "validate",
+  "trackChanges": true,
+  "persistUndefinedAsNull": true,
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "defaultFn": "guid"
+    },
+    "fraction": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number"
+    }
+  },
+  "mixins": {
+    "TimeStamp" : true
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

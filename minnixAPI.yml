@@ -1,0 +1,4268 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: minix_v0
+basePath: localhost:3000/api
+paths:
+  '/Users/{id}/accessTokens/{fk}':
+    get:
+      tags:
+        - User
+      summary: Buscar un elemento relacionado por id para accessTokens.
+      operationId: User.prototype.__findById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - User
+      summary: Suprimir un elemento relacionado por id para accessTokens.
+      operationId: User.prototype.__destroyById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - User
+      summary: Actualizar un elemento relacionado por id para accessTokens.
+      operationId: User.prototype.__updateById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+  '/Users/{id}/accessTokens':
+    get:
+      tags:
+        - User
+      summary: accessTokens consultas de User.
+      operationId: User.prototype.__get__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+      deprecated: false
+    post:
+      tags:
+        - User
+      summary: Crea una nueva instancia en accessTokens de este modelo.
+      operationId: User.prototype.__create__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - User
+      summary: Suprime todos los accessTokens de este modelo.
+      operationId: User.prototype.__delete__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Users/{id}/accessTokens/count':
+    get:
+      tags:
+        - User
+      summary: Recuentos accessTokens de User.
+      operationId: User.prototype.__count__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /Users:
+    post:
+      tags:
+        - User
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: User.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    patch:
+      tags:
+        - User
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: User.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    put:
+      tags:
+        - User
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: User.replaceOrCreate__put_Users
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    get:
+      tags:
+        - User
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: User.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+      deprecated: false
+  /Users/replaceOrCreate:
+    post:
+      tags:
+        - User
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: User.replaceOrCreate__post_Users_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  /Users/upsertWithWhere:
+    post:
+      tags:
+        - User
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: User.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  '/Users/{id}/exists':
+    get:
+      tags:
+        - User
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'User.exists__get_Users_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/Users/{id}':
+    head:
+      tags:
+        - User
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'User.exists__head_Users_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - User
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: User.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    put:
+      tags:
+        - User
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'User.replaceById__put_Users_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    delete:
+      tags:
+        - User
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: User.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - User
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: User.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  '/Users/{id}/replace':
+    post:
+      tags:
+        - User
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'User.replaceById__post_Users_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  /Users/findOne:
+    get:
+      tags:
+        - User
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: User.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  /Users/update:
+    post:
+      tags:
+        - User
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: User.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /Users/count:
+    get:
+      tags:
+        - User
+      summary: Count instances of the model matched by where from the data source.
+      operationId: User.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /Users/change-stream:
+    post:
+      tags:
+        - User
+      summary: Create a change stream.
+      operationId: User.createChangeStream__post_Users_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - User
+      summary: Create a change stream.
+      operationId: User.createChangeStream__get_Users_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /Users/login:
+    post:
+      tags:
+        - User
+      summary: Login a user with username/email and password.
+      operationId: User.login
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            type: object
+        - name: include
+          in: query
+          description: >-
+            Related objects to include in the response. See the description of
+            return value for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: >+
+              El cuerpo de respuesta contiene propiedades de la AccessToken
+              creada durante el inicio de la sesión.
+
+              Dependiendo del valor del parámetro `include`, el cuerpo puede
+              contener propiedades adicionales:
+
+                - `user` - `U+007BUserU+007D` - Datos del usuario conectado actualmente. (`include=user`)
+
+            type: object
+      deprecated: false
+  /Users/logout:
+    post:
+      tags:
+        - User
+      summary: Logout a user with access token.
+      operationId: User.logout
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Users/{id}/verify':
+    post:
+      tags:
+        - User
+      summary: Trigger user's identity verification with configured verifyOptions
+      operationId: User.prototype.verify
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /Users/confirm:
+    get:
+      tags:
+        - User
+      summary: Confirm a user registration with identity verification token.
+      operationId: User.confirm
+      parameters:
+        - name: uid
+          in: query
+          required: true
+          type: string
+        - name: token
+          in: query
+          required: true
+          type: string
+        - name: redirect
+          in: query
+          required: false
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /Users/reset:
+    post:
+      tags:
+        - User
+      summary: Reset password for a user with email.
+      operationId: User.resetPassword
+      parameters:
+        - name: options
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /Users/change-password:
+    post:
+      tags:
+        - User
+      summary: Change a user's password.
+      operationId: User.changePassword
+      parameters:
+        - name: oldPassword
+          in: formData
+          required: true
+          type: string
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /Users/reset-password:
+    post:
+      tags:
+        - User
+      summary: Reset user's password via a password-reset token.
+      operationId: User.setPassword
+      parameters:
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/products/{id}/impost':
+    get:
+      tags:
+        - product
+      summary: Capta la relación belongsTo impost.
+      operationId: product.prototype.__get__impost
+      parameters:
+        - name: id
+          in: path
+          description: product id
+          required: true
+          type: string
+          format: JSON
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+  '/products/{id}/unity':
+    get:
+      tags:
+        - product
+      summary: Capta la relación belongsTo unity.
+      operationId: product.prototype.__get__unity
+      parameters:
+        - name: id
+          in: path
+          description: product id
+          required: true
+          type: string
+          format: JSON
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+  '/products/{id}/type':
+    get:
+      tags:
+        - product
+      summary: Capta la relación belongsTo type.
+      operationId: product.prototype.__get__type
+      parameters:
+        - name: id
+          in: path
+          description: product id
+          required: true
+          type: string
+          format: JSON
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+  '/products/{id}/category':
+    get:
+      tags:
+        - product
+      summary: Capta la relación belongsTo category.
+      operationId: product.prototype.__get__category
+      parameters:
+        - name: id
+          in: path
+          description: product id
+          required: true
+          type: string
+          format: JSON
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  /products:
+    post:
+      tags:
+        - product
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: product.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    patch:
+      tags:
+        - product
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: product.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    put:
+      tags:
+        - product
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: product.replaceOrCreate__put_products
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    get:
+      tags:
+        - product
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: product.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/product'
+      deprecated: false
+  /products/replaceOrCreate:
+    post:
+      tags:
+        - product
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: product.replaceOrCreate__post_products_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+  /products/upsertWithWhere:
+    post:
+      tags:
+        - product
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: product.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+  '/products/{id}/exists':
+    get:
+      tags:
+        - product
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'product.exists__get_products_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/products/{id}':
+    head:
+      tags:
+        - product
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'product.exists__head_products_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - product
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: product.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    put:
+      tags:
+        - product
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'product.replaceById__put_products_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    delete:
+      tags:
+        - product
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: product.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - product
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: product.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: product id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+  '/products/{id}/replace':
+    post:
+      tags:
+        - product
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'product.replaceById__post_products_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+  /products/findOne:
+    get:
+      tags:
+        - product
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: product.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+  /products/update:
+    post:
+      tags:
+        - product
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: product.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /products/count:
+    get:
+      tags:
+        - product
+      summary: Count instances of the model matched by where from the data source.
+      operationId: product.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /products/change-stream:
+    post:
+      tags:
+        - product
+      summary: Create a change stream.
+      operationId: product.createChangeStream__post_products_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - product
+      summary: Create a change stream.
+      operationId: product.createChangeStream__get_products_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  '/products/getOnlyUnities/{id}':
+    get:
+      tags:
+        - product
+      operationId: product.getOnlyUnities
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              Unity:
+                type: array
+      deprecated: false
+  '/imposts/{id}/products/{fk}':
+    get:
+      tags:
+        - impost
+      summary: Buscar un elemento relacionado por id para products.
+      operationId: impost.prototype.__findById__products
+      parameters:
+        - name: id
+          in: path
+          description: impost id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    delete:
+      tags:
+        - impost
+      summary: Suprimir un elemento relacionado por id para products.
+      operationId: impost.prototype.__destroyById__products
+      parameters:
+        - name: id
+          in: path
+          description: impost id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - impost
+      summary: Actualizar un elemento relacionado por id para products.
+      operationId: impost.prototype.__updateById__products
+      parameters:
+        - name: id
+          in: path
+          description: impost id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+  '/imposts/{id}/products':
+    get:
+      tags:
+        - impost
+      summary: products consultas de impost.
+      operationId: impost.prototype.__get__products
+      parameters:
+        - name: id
+          in: path
+          description: impost id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/product'
+      deprecated: false
+    post:
+      tags:
+        - impost
+      summary: Crea una nueva instancia en products de este modelo.
+      operationId: impost.prototype.__create__products
+      parameters:
+        - name: id
+          in: path
+          description: impost id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    delete:
+      tags:
+        - impost
+      summary: Suprime todos los products de este modelo.
+      operationId: impost.prototype.__delete__products
+      parameters:
+        - name: id
+          in: path
+          description: impost id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/imposts/{id}/products/count':
+    get:
+      tags:
+        - impost
+      summary: Recuentos products de impost.
+      operationId: impost.prototype.__count__products
+      parameters:
+        - name: id
+          in: path
+          description: impost id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /imposts:
+    post:
+      tags:
+        - impost
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: impost.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/impost'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+    patch:
+      tags:
+        - impost
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: impost.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/impost'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+    put:
+      tags:
+        - impost
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: impost.replaceOrCreate__put_imposts
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/impost'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+    get:
+      tags:
+        - impost
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: impost.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/impost'
+      deprecated: false
+  /imposts/replaceOrCreate:
+    post:
+      tags:
+        - impost
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: impost.replaceOrCreate__post_imposts_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/impost'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+  /imposts/upsertWithWhere:
+    post:
+      tags:
+        - impost
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: impost.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/impost'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+  '/imposts/{id}/exists':
+    get:
+      tags:
+        - impost
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'impost.exists__get_imposts_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/imposts/{id}':
+    head:
+      tags:
+        - impost
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'impost.exists__head_imposts_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - impost
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: impost.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+    put:
+      tags:
+        - impost
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'impost.replaceById__put_imposts_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/impost'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+    delete:
+      tags:
+        - impost
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: impost.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - impost
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: impost.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: impost id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/impost'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+  '/imposts/{id}/replace':
+    post:
+      tags:
+        - impost
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'impost.replaceById__post_imposts_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/impost'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+  /imposts/findOne:
+    get:
+      tags:
+        - impost
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: impost.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/impost'
+      deprecated: false
+  /imposts/update:
+    post:
+      tags:
+        - impost
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: impost.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/impost'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /imposts/count:
+    get:
+      tags:
+        - impost
+      summary: Count instances of the model matched by where from the data source.
+      operationId: impost.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /imposts/change-stream:
+    post:
+      tags:
+        - impost
+      summary: Create a change stream.
+      operationId: impost.createChangeStream__post_imposts_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - impost
+      summary: Create a change stream.
+      operationId: impost.createChangeStream__get_imposts_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  '/unity/{id}/products/{fk}':
+    get:
+      tags:
+        - unity
+      summary: Buscar un elemento relacionado por id para products.
+      operationId: unity.prototype.__findById__products
+      parameters:
+        - name: id
+          in: path
+          description: unity id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    delete:
+      tags:
+        - unity
+      summary: Suprimir un elemento relacionado por id para products.
+      operationId: unity.prototype.__destroyById__products
+      parameters:
+        - name: id
+          in: path
+          description: unity id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - unity
+      summary: Actualizar un elemento relacionado por id para products.
+      operationId: unity.prototype.__updateById__products
+      parameters:
+        - name: id
+          in: path
+          description: unity id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+  '/unity/{id}/products':
+    get:
+      tags:
+        - unity
+      summary: products consultas de unity.
+      operationId: unity.prototype.__get__products
+      parameters:
+        - name: id
+          in: path
+          description: unity id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/product'
+      deprecated: false
+    post:
+      tags:
+        - unity
+      summary: Crea una nueva instancia en products de este modelo.
+      operationId: unity.prototype.__create__products
+      parameters:
+        - name: id
+          in: path
+          description: unity id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    delete:
+      tags:
+        - unity
+      summary: Suprime todos los products de este modelo.
+      operationId: unity.prototype.__delete__products
+      parameters:
+        - name: id
+          in: path
+          description: unity id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/unity/{id}/products/count':
+    get:
+      tags:
+        - unity
+      summary: Recuentos products de unity.
+      operationId: unity.prototype.__count__products
+      parameters:
+        - name: id
+          in: path
+          description: unity id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /unity:
+    post:
+      tags:
+        - unity
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: unity.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/unity'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+    patch:
+      tags:
+        - unity
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: unity.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/unity'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+    put:
+      tags:
+        - unity
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: unity.replaceOrCreate__put_unity
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/unity'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+    get:
+      tags:
+        - unity
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: unity.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/unity'
+      deprecated: false
+  /unity/replaceOrCreate:
+    post:
+      tags:
+        - unity
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: unity.replaceOrCreate__post_unity_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/unity'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+  /unity/upsertWithWhere:
+    post:
+      tags:
+        - unity
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: unity.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/unity'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+  '/unity/{id}/exists':
+    get:
+      tags:
+        - unity
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'unity.exists__get_unity_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/unity/{id}':
+    head:
+      tags:
+        - unity
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'unity.exists__head_unity_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - unity
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: unity.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+    put:
+      tags:
+        - unity
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'unity.replaceById__put_unity_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/unity'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+    delete:
+      tags:
+        - unity
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: unity.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - unity
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: unity.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: unity id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/unity'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+  '/unity/{id}/replace':
+    post:
+      tags:
+        - unity
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'unity.replaceById__post_unity_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/unity'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+  /unity/findOne:
+    get:
+      tags:
+        - unity
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: unity.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/unity'
+      deprecated: false
+  /unity/update:
+    post:
+      tags:
+        - unity
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: unity.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/unity'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /unity/count:
+    get:
+      tags:
+        - unity
+      summary: Count instances of the model matched by where from the data source.
+      operationId: unity.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /unity/change-stream:
+    post:
+      tags:
+        - unity
+      summary: Create a change stream.
+      operationId: unity.createChangeStream__post_unity_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - unity
+      summary: Create a change stream.
+      operationId: unity.createChangeStream__get_unity_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  '/types/{id}/products/{fk}':
+    get:
+      tags:
+        - type
+      summary: Buscar un elemento relacionado por id para products.
+      operationId: type.prototype.__findById__products
+      parameters:
+        - name: id
+          in: path
+          description: type id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    delete:
+      tags:
+        - type
+      summary: Suprimir un elemento relacionado por id para products.
+      operationId: type.prototype.__destroyById__products
+      parameters:
+        - name: id
+          in: path
+          description: type id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - type
+      summary: Actualizar un elemento relacionado por id para products.
+      operationId: type.prototype.__updateById__products
+      parameters:
+        - name: id
+          in: path
+          description: type id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+  '/types/{id}/products':
+    get:
+      tags:
+        - type
+      summary: products consultas de type.
+      operationId: type.prototype.__get__products
+      parameters:
+        - name: id
+          in: path
+          description: type id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/product'
+      deprecated: false
+    post:
+      tags:
+        - type
+      summary: Crea una nueva instancia en products de este modelo.
+      operationId: type.prototype.__create__products
+      parameters:
+        - name: id
+          in: path
+          description: type id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    delete:
+      tags:
+        - type
+      summary: Suprime todos los products de este modelo.
+      operationId: type.prototype.__delete__products
+      parameters:
+        - name: id
+          in: path
+          description: type id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/types/{id}/products/count':
+    get:
+      tags:
+        - type
+      summary: Recuentos products de type.
+      operationId: type.prototype.__count__products
+      parameters:
+        - name: id
+          in: path
+          description: type id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /types:
+    post:
+      tags:
+        - type
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: type.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/type'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+    patch:
+      tags:
+        - type
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: type.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/type'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+    put:
+      tags:
+        - type
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: type.replaceOrCreate__put_types
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/type'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+    get:
+      tags:
+        - type
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: type.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/type'
+      deprecated: false
+  /types/replaceOrCreate:
+    post:
+      tags:
+        - type
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: type.replaceOrCreate__post_types_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/type'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+  /types/upsertWithWhere:
+    post:
+      tags:
+        - type
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: type.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/type'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+  '/types/{id}/exists':
+    get:
+      tags:
+        - type
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'type.exists__get_types_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/types/{id}':
+    head:
+      tags:
+        - type
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'type.exists__head_types_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - type
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: type.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+    put:
+      tags:
+        - type
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'type.replaceById__put_types_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/type'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+    delete:
+      tags:
+        - type
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: type.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - type
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: type.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: type id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/type'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+  '/types/{id}/replace':
+    post:
+      tags:
+        - type
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'type.replaceById__post_types_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/type'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+  /types/findOne:
+    get:
+      tags:
+        - type
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: type.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/type'
+      deprecated: false
+  /types/update:
+    post:
+      tags:
+        - type
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: type.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/type'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /types/count:
+    get:
+      tags:
+        - type
+      summary: Count instances of the model matched by where from the data source.
+      operationId: type.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /types/change-stream:
+    post:
+      tags:
+        - type
+      summary: Create a change stream.
+      operationId: type.createChangeStream__post_types_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - type
+      summary: Create a change stream.
+      operationId: type.createChangeStream__get_types_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  '/categories/{id}/products/{fk}':
+    get:
+      tags:
+        - category
+      summary: Buscar un elemento relacionado por id para products.
+      operationId: category.prototype.__findById__products
+      parameters:
+        - name: id
+          in: path
+          description: category id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    delete:
+      tags:
+        - category
+      summary: Suprimir un elemento relacionado por id para products.
+      operationId: category.prototype.__destroyById__products
+      parameters:
+        - name: id
+          in: path
+          description: category id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - category
+      summary: Actualizar un elemento relacionado por id para products.
+      operationId: category.prototype.__updateById__products
+      parameters:
+        - name: id
+          in: path
+          description: category id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para products
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+  '/categories/{id}/products':
+    get:
+      tags:
+        - category
+      summary: products consultas de category.
+      operationId: category.prototype.__get__products
+      parameters:
+        - name: id
+          in: path
+          description: category id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/product'
+      deprecated: false
+    post:
+      tags:
+        - category
+      summary: Crea una nueva instancia en products de este modelo.
+      operationId: category.prototype.__create__products
+      parameters:
+        - name: id
+          in: path
+          description: category id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/product'
+      deprecated: false
+    delete:
+      tags:
+        - category
+      summary: Suprime todos los products de este modelo.
+      operationId: category.prototype.__delete__products
+      parameters:
+        - name: id
+          in: path
+          description: category id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/categories/{id}/products/count':
+    get:
+      tags:
+        - category
+      summary: Recuentos products de category.
+      operationId: category.prototype.__count__products
+      parameters:
+        - name: id
+          in: path
+          description: category id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /categories:
+    post:
+      tags:
+        - category
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: category.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    patch:
+      tags:
+        - category
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: category.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    put:
+      tags:
+        - category
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: category.replaceOrCreate__put_categories
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    get:
+      tags:
+        - category
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: category.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/category'
+      deprecated: false
+  /categories/replaceOrCreate:
+    post:
+      tags:
+        - category
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: category.replaceOrCreate__post_categories_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  /categories/upsertWithWhere:
+    post:
+      tags:
+        - category
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: category.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  '/categories/{id}/exists':
+    get:
+      tags:
+        - category
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'category.exists__get_categories_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/categories/{id}':
+    head:
+      tags:
+        - category
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'category.exists__head_categories_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - category
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: category.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    put:
+      tags:
+        - category
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'category.replaceById__put_categories_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    delete:
+      tags:
+        - category
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: category.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - category
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: category.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: category id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  '/categories/{id}/replace':
+    post:
+      tags:
+        - category
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'category.replaceById__post_categories_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  /categories/findOne:
+    get:
+      tags:
+        - category
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: category.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  /categories/update:
+    post:
+      tags:
+        - category
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: category.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /categories/count:
+    get:
+      tags:
+        - category
+      summary: Count instances of the model matched by where from the data source.
+      operationId: category.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /categories/change-stream:
+    post:
+      tags:
+        - category
+      summary: Create a change stream.
+      operationId: category.createChangeStream__post_categories_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - category
+      summary: Create a change stream.
+      operationId: category.createChangeStream__get_categories_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /packagings:
+    post:
+      tags:
+        - packaging
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: packaging.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/packaging'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+    patch:
+      tags:
+        - packaging
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: packaging.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/packaging'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+    put:
+      tags:
+        - packaging
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: packaging.replaceOrCreate__put_packagings
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/packaging'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+    get:
+      tags:
+        - packaging
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: packaging.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/packaging'
+      deprecated: false
+  /packagings/replaceOrCreate:
+    post:
+      tags:
+        - packaging
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: packaging.replaceOrCreate__post_packagings_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/packaging'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+  /packagings/upsertWithWhere:
+    post:
+      tags:
+        - packaging
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: packaging.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/packaging'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+  '/packagings/{id}/exists':
+    get:
+      tags:
+        - packaging
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'packaging.exists__get_packagings_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/packagings/{id}':
+    head:
+      tags:
+        - packaging
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'packaging.exists__head_packagings_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - packaging
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: packaging.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+    put:
+      tags:
+        - packaging
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'packaging.replaceById__put_packagings_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/packaging'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+    delete:
+      tags:
+        - packaging
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: packaging.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - packaging
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: packaging.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: packaging id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/packaging'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+  '/packagings/{id}/replace':
+    post:
+      tags:
+        - packaging
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'packaging.replaceById__post_packagings_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/packaging'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+  /packagings/findOne:
+    get:
+      tags:
+        - packaging
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: packaging.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/packaging'
+      deprecated: false
+  /packagings/update:
+    post:
+      tags:
+        - packaging
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: packaging.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/packaging'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /packagings/count:
+    get:
+      tags:
+        - packaging
+      summary: Count instances of the model matched by where from the data source.
+      operationId: packaging.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /packagings/change-stream:
+    post:
+      tags:
+        - packaging
+      summary: Create a change stream.
+      operationId: packaging.createChangeStream__post_packagings_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - packaging
+      summary: Create a change stream.
+      operationId: packaging.createChangeStream__get_packagings_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+tags:
+  - name: User
+  - name: product
+  - name: impost
+  - name: unity
+  - name: type
+  - name: category
+  - name: packaging
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+  - application/xml
+  - text/xml
+produces:
+  - application/json
+  - application/xml
+  - text/xml
+  - application/javascript
+  - text/javascript
+definitions:
+  x-any:
+    properties: {}
+  AccessToken:
+    properties:
+      id:
+        type: string
+      ttl:
+        default: 1209600
+        description: time to live in seconds (2 weeks by default)
+        type: number
+        format: double
+      scopes:
+        description: Array of scopes granted to this access token.
+        type: array
+        items:
+          type: string
+      created:
+        type: string
+        format: date-time
+      userId:
+        type: number
+        format: double
+    required:
+      - id
+    additionalProperties: false
+  User:
+    properties:
+      realm:
+        type: string
+      username:
+        type: string
+      email:
+        type: string
+      emailVerified:
+        type: boolean
+      id:
+        type: number
+        format: double
+    required:
+      - email
+    additionalProperties: false
+  impost:
+    properties:
+      name:
+        type: string
+      description:
+        default: Descripcion
+        type: string
+      value:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+    required:
+      - createdAt
+      - updatedAt
+    additionalProperties: false
+  unity:
+    properties:
+      name:
+        type: string
+      description:
+        default: Descripcion
+        type: string
+      value:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+    required:
+      - createdAt
+      - updatedAt
+    additionalProperties: false
+  type:
+    properties:
+      name:
+        type: string
+      description:
+        default: Descripcion
+        type: string
+      value:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+    required:
+      - createdAt
+      - updatedAt
+    additionalProperties: false
+  category:
+    properties:
+      name:
+        type: string
+      description:
+        default: Descripcion
+        type: string
+      value:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+    required:
+      - createdAt
+      - updatedAt
+    additionalProperties: false
+  product:
+    properties:
+      name:
+        type: string
+      description:
+        default: Descripcion
+        type: string
+      image:
+        type: string
+      video:
+        type: string
+      code_bar:
+        type: string
+      flag:
+        type: boolean
+      state:
+        type: boolean
+      view:
+        type: boolean
+      version:
+        type: string
+      popularity:
+        default: 0
+        type: number
+        format: double
+      weight:
+        type: string
+      height:
+        type: string
+      wide:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+      impostId:
+        $ref: '#/definitions/ObjectID'
+      unityId:
+        $ref: '#/definitions/ObjectID'
+      typeId:
+        $ref: '#/definitions/ObjectID'
+      categoryId:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - createdAt
+      - updatedAt
+    additionalProperties: false
+  packaging:
+    properties:
+      fraction:
+        type: string
+      quantity:
+        type: number
+        format: double
+      id:
+        $ref: '#/definitions/ObjectID'
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+    required:
+      - createdAt
+      - updatedAt
+    additionalProperties: false
+  ObjectID:
+    type: string
+    pattern: '^[a-fA-F\d]{24}$'
