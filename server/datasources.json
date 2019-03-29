@@ -4,11 +4,10 @@
     "connector": "memory"
   },
   "mongo_minix_v0": {
-    "url": "mongodb+srv://minnix-a4gc5.mongodb.net/mongo_minix_test_v0",
+    "port":27017,
+    "url": "mongodb+srv://minix_admin:rNunehabXAC0zqkP@minnix-a4gc5.mongodb.net/test?retryWrites=true",
     "database": "mongo_minix_test_v0",
-    "password": "rNunehabXAC0zqkP",
     "name": "mongo_minix_v0",
-    "user": "minix_admin",
     "connector": "mongodb"
   }
 
